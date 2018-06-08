@@ -1,0 +1,98 @@
+<div class="page-header">
+	<h1>User Management</h1>
+</div>
+
+<br>
+
+
+<div class="jumbotron text-center" ng-show="management.loading">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Memuat....</p>
+</div>
+
+<br>
+
+
+<button type="button" ng-click="management.showMore(number);" class="btn btn-success" >Apply Filter</button>
+<button type="button" ng-click="management.showAll();" class="btn btn-warning" >Show All</button>
+<div class="showmore">
+	<div class="col-lg-4">
+		<div class="input-group">
+			<span class="input-group-addon">Result to display:</span>
+			<input type="text" class="form-control" ng-model = "number">
+		</div>
+	</div>
+
+</div>
+
+<div class="navbar-form">
+	<div class="form-group">
+		<input type="text" class="form-control" name="search" placeholder="Search for..*" ng-model="searchKeyword">
+	</div>
+	<button type="button" ng-click="management.search(searchKeyword, number);" class="btn btn-default">Search</button>
+	<button type="button" ng-click="management.clear();" class="btn btn-default">Clear</button>
+	<a href="/search">
+		<button type="button" class="btn btn-default">Advanced Search</button>
+	</a>
+</div>
+
+<br>
+
+<div ng-show="searchFilter !== undefined">
+	<p><strong>Total result: </strong>{{ (management.users | filter: searchFilter).length }}</p>
+</div>
+
+<div ng-show="searchFilter !== undefined">
+	<p><strong>Showing: </strong>{{ (management.users | filter: searchFilter | limitTo: management.limit).length }}</p>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="management.showMoreError">
+	<div class="alert alert-danger">{{ management.showMoreError }}</div>
+</div>
+<br>
+
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<strong>User Management</strong>
+	</div>
+	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>Username</th>
+			<th>E-Mail</th>
+		</tr>
+		<!-- filter: searchKeyword untuk mencari keseluruhan kata -->
+		<tr ng-repeat="person in management.users | filter: searchFilter | limitTo: management.limit">
+			<td>{{ person.name }}</td>
+			<td>{{ person.username }}</t d>
+			<td>{{ person.email }}</td>
+			<td>
+				<a href="/edit/{{ person._id }}">
+					<button type="button" ng-show="management.editAccess" class="btn btn-primary">Edit</button>
+				</a>
+				<button type="button" ng-click="management.deleteUser(person.username);" ng-show="management.deleteAccess" class="btn btn-danger">Delete</button>
+
+			</td>
+		</tr>
+
+	</table>
+</div>
+<br>
+
+
+<button type="button" ng-click="management.showMore(number);" class="btn btn-success" >Apply Filter</button>
+<button type="button" ng-click="management.showAll();" class="btn btn-warning" >Show All</button>
+<div class="showmore">
+	<div class="col-lg-4">
+		<div class="input-group">
+			<span class="input-group-addon">Result to display:</span>
+			<input type="text" class="form-control" ng-model = "number">
+		</div>
+	</div>
+
+</div>
+<br>
+<br>

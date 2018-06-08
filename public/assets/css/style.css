@@ -1,0 +1,48 @@
+main  {
+    padding-top: 30px;
+}
+
+.showmore {
+  display: inline;
+}
+
+
+/*---HEADER----*/
+header .navbar  {
+    border-radius: 0;
+}
+
+/*tambahan dewe : button login form , lupa password */
+
+.reset {
+  float: right;
+}
+
+/*----ngANIMATE-----*/
+.show-hide-message.ng-hide-remove {
+    -webkit-animation: zoomIn 0.3s both ease;
+    -moz-animation: zoomIn 0.3s both ease;
+    animation: zoomIn 0.3s both ease;
+}
+
+/*----------ANIMATIONS-------*/
+.spinner   {
+  -webkit-animation: spin infinite;
+  -moz-animation: spin infinite;
+  animation: spin infinite;
+}
+
+@keyframes spin {
+    from    { transform: rotate(0deg);}
+    to    { transform: rotate(360deg);}
+}
+
+@-webkit-keyframes spin {
+    from    { -webkit-transform: rotate(0deg);}
+    to    { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin {
+    from    { -moz-transform: rotate(0deg);}
+    to    { -moz-transform: rotate(360deg);}
+}

@@ -1,0 +1,36 @@
+{
+  "name": "enigmatic-wave-11375",
+  "version": "1.0.0",
+  "description": "mean stack application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "MEAN",
+    "stack"
+  ],
+  "author": "arim",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.0.14",
+    "mongoose-title-case": "0.0.4",
+    "mongoose-validator": "^2.0.2",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.4",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-google-oauth1": "^1.0.0",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-twitter": "^1.0.4"
+  }
+}
